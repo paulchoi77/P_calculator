@@ -56,8 +56,6 @@ const CombinedPensionCalculator = () => {
           setIsaDeposit={setIsaDeposit}
           isaType={isaType}
           setIsaType={setIsaType}
-          generalReturnRate={generalReturnRate}
-          setGeneralReturnRate={setGeneralReturnRate}
           isaReturnRate={isaReturnRate}
           setIsaReturnRate={setIsaReturnRate}
         />
@@ -105,7 +103,6 @@ const YearlyTaxBenefitCalculator = ({
   irpDeposit, setIrpDeposit,
   isaDeposit, setIsaDeposit,
   isaType, setIsaType,
-  generalReturnRate, setGeneralReturnRate,
   isaReturnRate, setIsaReturnRate
 }) => {
   // 세제혜택 결과
@@ -213,19 +210,7 @@ const YearlyTaxBenefitCalculator = ({
             />
             <p className="text-xs text-gray-500 mt-1">만 50세 이상은 세액공제율 16.5% 적용</p>
           </div>
-          
-          <div className="mb-4">
-            <label className="block text-sm mb-1">일반 투자 수익률 (%)</label>
-            <input
-              type="number"
-              value={generalReturnRate}
-              onChange={(e) => setGeneralReturnRate(Number(e.target.value))}
-              className="w-full p-2 border rounded"
-              step="0.1"
-            />
-            <p className="text-xs text-gray-500 mt-1">연금저축, IRP 계좌에 적용</p>
-          </div>
-          
+                  
           <h2 className="text-xl font-semibold my-4">납입 정보</h2>
           
           <div className="mb-4">
