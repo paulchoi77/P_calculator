@@ -177,6 +177,7 @@ const YearlyTaxBenefitCalculator = ({
   // 입력값 변경 시 세제혜택 재계산
   useEffect(() => {
     calculateTaxBenefits();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [annualIncome, pensionSaving, isaDeposit, irpDeposit, age, isaType, isaReturnRate]);
   
   // 숫자 포맷팅 함수
@@ -437,10 +438,10 @@ const LongTermPensionCalculator = ({
     const reinvestReturnFactor = reinvestRate / 100;
     const inflationFactor = inflationRate / 100;
     
-    // 실질 수익률 계산 (명목 수익률 - 인플레이션)
-    const realGeneralReturnFactor = (1 + generalReturnFactor) / (1 + inflationFactor) - 1;
-    const realIsaReturnFactor = (1 + isaReturnFactor) / (1 + inflationFactor) - 1;
-    const realReinvestReturnFactor = (1 + reinvestReturnFactor) / (1 + inflationFactor) - 1;
+    // // 실질 수익률 계산 (명목 수익률 - 인플레이션)
+    // const realGeneralReturnFactor = (1 + generalReturnFactor) / (1 + inflationFactor) - 1;
+    // const realIsaReturnFactor = (1 + isaReturnFactor) / (1 + inflationFactor) - 1;
+    // const realReinvestReturnFactor = (1 + reinvestReturnFactor) / (1 + inflationFactor) - 1;
     
     // 연금저축 적립액 미래가치
     const pensionFV = calculateFutureValueWithRegularDeposit(
@@ -554,6 +555,7 @@ const LongTermPensionCalculator = ({
   // 입력값 변경 시 계산 다시 수행
   useEffect(() => {
     calculateLongTermResults();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     annualIncome, age, pensionSaving, irpDeposit, isaDeposit, isaType,
     generalReturnRate, isaReturnRate, inflationRate, contributionYears, retirementAge,
