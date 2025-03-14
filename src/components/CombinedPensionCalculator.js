@@ -655,7 +655,7 @@ const LongTermPensionCalculator = ({
           </div>
           
           <div className="mb-3">
-            <label className="block text-sm mb-1">인플레이션 비율 (%)</label>
+            <label className="block text-sm mb-1">예상 인플레이션율 (%)</label>
             <input
               type="number"
               value={inflationRate}
